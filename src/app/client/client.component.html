@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <label>
         Type a username
         <input class="form-control" [(ngModel)]="username"/>
@@ -7,6 +7,17 @@
         Erase username
     </button>
     <p>{{ username }}</p>
+</div> -->
+<div class="container">
+    <button class="btn btn-primary" (click)="onClickButton()">Click me to see the phrase</button>
+    <p *ngIf="appear">{{ secret }}</p>
+    <ul *ngFor="let log of clickLogs">
+        <li 
+            [ngClass]="{moreThanFive: log >= 5}" 
+            [ngStyle]="{backgroundColor: log >= 5 ? 'blue' : 'transparent'}">
+            {{ log }}
+        </li>
+    </ul>
 </div>
 <app-server></app-server>
 <app-server></app-server>
